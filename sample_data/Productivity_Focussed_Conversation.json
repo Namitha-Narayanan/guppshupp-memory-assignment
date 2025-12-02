@@ -1,0 +1,12 @@
+[
+  {"role": "user", "content": "I'm trying to build a productive routine for 2025."},
+  {"role": "assistant", "content": "Nice! What habits are you aiming for?"},
+  {"role": "user", "content": "Daily exercise, reading, and consistent sleep."},
+  {"role": "assistant", "content": "Great set of goals."},
+  {"role": "user", "content": "But I keep procrastinating after work."},
+  {"role": "assistant", "content": "Evenings are tough. What usually derails you?"},
+ {"role": "user", "content": "YouTube and long naps."},
+  {"role": "assistant", "content": "Classic combo."},
+  {"role": "user", "content": "I want a workflow that actually sticks."},
+  {"role": "assistant", "content": "Let’s build one together."}
+]

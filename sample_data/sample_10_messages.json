@@ -1,0 +1,12 @@
+[
+  {"role": "user", "content": "Hey, I'm feeling low today."},
+  {"role": "assistant", "content": "I’m here. Want to talk about what happened?"},
+  {"role": "user", "content": "Work was stressful and I’m exhausted."},
+  {"role": "assistant", "content": "That sounds really draining."},
+  {"role": "user", "content": "I just want to lie down and disappear for a bit."},
+  {"role": "assistant", "content": "I hear you. Want to rest or talk it out?"},
+  {"role": "user", "content": "Maybe just talk a bit."},
+  {"role": "assistant", "content": "Of course. I’m here with you."},
+  {"role": "user", "content": "Thank you for listening."},
+  {"role": "assistant", "content": "Always."}
+]

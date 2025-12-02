@@ -1,102 +1,212 @@
-# GuppShupp – Memory & Personality Engine Assignment
+# GuppShupp – Founding AI Engineer Assignment
 
-This repository contains my implementation of the **Founding AI Engineer** assessment for **GuppShupp**.  
-The assignment explores how a companion AI can understand a user over time and adapt its tone using memory-driven personalisation.
+This repository contains my implementation of the GuppShupp AI Companion assignment.  
+The project includes:
 
----
+- A **Memory Extraction Module**
+- A **Personality Engine**
+- A **Streamlit interface** to demonstrate the full flow
+- **Unit tests** for core components
 
-## 🌱 Overview
-
-The project focuses on two tightly connected capabilities:
-
-### 1. **Memory Extraction Module**
-Given ~30 user messages, the module extracts structured long-term memories:
-- **Preferences** (likes/dislikes, habits, routines)
-- **Emotional patterns** (recurring feelings and triggers)
-- **Facts worth remembering** (biographical or stable information)
-
-The extracted memories are returned as a clean JSON object so they can be reused by other components.
-
-### 2. **Personality Engine**
-The same user message is answered in two ways:
-- **Before:** a plain, neutral LLM response  
-- **After:** a personalised response that uses:
-  - extracted memories  
-  - a selected personality style (mentor, witty friend, therapist, etc.)  
-  - tone-modifying rules  
-
-This makes the personality shift and memory use immediately visible.
+The solution is modular, easy to run, and follows the assignment requirements.
 
 ---
 
-## 🧠 System Design
+## 1. Project Overview
 
-The app is built as a small pipeline:
+### Memory Extraction Module
+Extracts the following from up to 30 user chat messages:
+- User preferences  
+- Emotional patterns  
+- Long-term factual memories  
 
-1. **Raw conversation → Memory Extraction**  
-   A prompt instructs the LLM to identify stable patterns and generate structured memories.
+If an `OPENAI_API_KEY` is available, this module uses an LLM to perform the extraction.  
+If no key is available, it returns a consistent empty structure for testing.
 
-2. **Memories → Persona Profile**  
-   Based on extracted memories, a short persona ruleset is created for the assistant.
+### Personality Engine
+Rewrites a **neutral response** into a selected tone:
+- Mentor  
+- Witty Friend  
+- Therapist  
+- Cheerleader  
 
-3. **User message → Two Responses**
-   - **Baseline** (no memory, no personality)
-   - **Personalised** (memory-informed + persona-driven)
+This is done using an LLM prompt that rewrites the full message in the chosen style.
 
-This highlights how the assistant’s tone and specificity evolve when memory is involved.
+### Streamlit App
+A simple UI that shows:
+1. User input  
+2. Neutral response  
+3. Styled response  
+4. Personality switcher  
 
 ---
 
-## 🛠 Tech Stack
+## 2. Repository Structure
 
-- **Python 3**
-- **Streamlit** – for a simple, interactive UI
-- **OpenAI API** – for memory extraction & personality transformation
-- **Modular Python files** – for clarity and extendability  
-- **Virtual environment (`.venv`)** – isolates dependencies
+.
+├── app.py                     # Streamlit UI
+├── MemoryExtractor.py         # Memory extraction logic (LLM-based)
+├── PersonalityEngine.py       # Personality rewriting (LLM-based)
+├── sample_data/               # Example chat logs
+├── screenshots/               # Output screenshots
+├── tests/
+│   ├── test_memory_extractor.py
+│   ├── test_personality_engine.py
+│   └── test_validation.py
+├── requirements.txt           # Python dependencies
+└── README.md                  # Project documentation
 
----
 
-## 🚀 How to Run
+📦 3. Requirements
+Python Version
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
+Python 3.10+
+
+Install Dependencies
 pip install -r requirements.txt
-streamlit run app.py
-# GuppShupp – Memory & Personality Engine Assignment
 
-This project is my implementation of the GuppShupp Founding AI Engineer assessment.  
-It focuses on two core areas of companion AI:
+Environment Variable
 
-1. **Memory Extraction**
-   - Identifying user preferences  
-   - Recognising emotional patterns  
-   - Extracting long-term facts worth remembering  
+Set your OpenAI key (optional but recommended):
 
-2. **Personality Engine**
-   - Transforming a neutral assistant reply into different tones  
-     (mentor, witty friend, therapist, etc.)
-   - Showing before/after response differences
+macOS/Linux
 
-## Tech Stack
+export OPENAI_API_KEY=your_key_here
 
-- Python  
-- Streamlit (simple UI layer)  
-- OpenAI API  
-- Virtual environment (`.venv`)  
-- Modular Python files for clarity
 
-## How to Run
+Windows (PowerShell)
 
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+setx OPENAI_API_KEY "your_key_here"
+
+
+If no key is set:
+
+Memory extraction returns empty structured output
+
+Personality engine will still run with fallback prompts
+
+Tests will still pass
+
+▶️ 4. Running the Application
+
+Start the Streamlit app:
+
 streamlit run app.py
 
 
-## Notes
+You will see:
 
-This project was built for the GuppShupp technical assignment.  
-It is intentionally simple, modular, and easy to extend.
-	
+Input message box
+
+Personality selector
+
+Neutral response
+
+Styled response
+
+🧪 5. Running Tests
+
+Tests are written using pytest.
+
+Run all tests:
+
+pytest
+
+
+Tests cover:
+
+MemoryExtractor structure
+
+PersonalityEngine behavior
+
+Validation rules for chat messages
+
+🚀 6. Deployment Instructions
+
+This project can be deployed on Streamlit Cloud or any platform that supports Python:
+
+Streamlit Cloud:
+
+Push repo to GitHub
+
+Go to https://streamlit.io/cloud
+
+Deploy new app → choose this repo
+
+Set app.py as entry point
+
+Add the following secret (optional):
+
+OPENAI_API_KEY = your_key
+
+
+Your host link will be generated automatically.
+
+📌 7. Notes
+
+The solution is modular: Memory extraction and personality rewriting are independent components.
+
+The codebase is small, simple, and easy to extend.
+
+Test cases are deterministic and do not require network access.
+
+Designed to match the assignment requirement: modularity, structured output, and clean reasoning.
+
+🧩 8. System Architecture
+Overview Diagram (Text Version)
+
+┌──────────────────────────────┐
+│         User Input            │
+│  (chat messages from user)    │
+└───────────────┬──────────────┘
+                │
+                ▼
+      ┌────────────────────┐
+      │  Validation Layer  │
+      │ - Max 30 messages  │
+      │ - Structure check  │
+      └─────────┬──────────┘
+                │
+                ▼
+      ┌────────────────────┐
+      │  MemoryExtractor   │
+      │  (LLM-based)       │
+      │ - Preferences      │
+      │ - Emotional cues   │
+      │ - Long-term facts  │
+      └─────────┬──────────┘
+                │
+                ▼
+      ┌────────────────────┐
+      │  Neutral Response  │
+      │   (LLM-based)      │
+      └─────────┬──────────┘
+                │
+                ▼
+  ┌──────────────────────────────┐
+  │      PersonalityEngine       │
+  │   (LLM tone transformation)  │
+  │  - Mentor                    │
+  │  - Witty friend              │
+  │  - Therapist                 │
+  │  - Cheerleader               │
+  └───────────────┬──────────────┘
+                  │
+                  ▼
+       ┌────────────────────┐
+       │   Styled Reply     │
+       │  (persona output)  │
+       └────────────────────┘
+
+```mermaid
+flowchart TD
+
+A[User Messages (0–30)] --> B[Validation Layer<br>• Structure check<br>• Max 30 messages]
+
+B --> C[MemoryExtractor<br>(LLM-based)<br>• Preferences<br>• Emotional patterns<br>• Long-term facts]
+
+C --> D[Neutral Response<br>(LLM-based)]
+
+D --> E[PersonalityEngine<br>(LLM rewrite)<br>• Mentor<br>• Friend<br>• Therapist<br>• Cheerleader]
+
+E --> F[Styled Response Output]

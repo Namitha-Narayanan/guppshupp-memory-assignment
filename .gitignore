@@ -1,18 +1,20 @@
+# Python stuff
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
 # Virtual env
 .venv/
 venv/
+env/
 
-# Python junk
-__pycache__/
-*.pyc
-
-# macOS junk
+# OS junk
 .DS_Store
+
+# IDE configs
+.vscode/
+.idea/
 
 # Streamlit
 .streamlit/
-
-# Environment variables
-.env
-*.env
-

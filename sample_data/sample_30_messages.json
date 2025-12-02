@@ -1,0 +1,37 @@
+[
+  { "role": "user", "content": "Hey, I’m Riya. I just moved to Bangalore a year ago and I’m still figuring out my routine." },
+  { "role": "user", "content": "I work as a product manager at a fintech startup and honestly the context switching fries my brain most days." },
+  { "role": "user", "content": "I’m very much a night owl – my brain only starts working properly after 9pm, even though I keep trying to become a morning person." },
+  { "role": "user", "content": "I’ve been feeling pretty burnt out lately, like I’m constantly behind on something." },
+  { "role": "user", "content": "Also, I’m an only child, so I tend to overthink my parents’ expectations a lot." },
+
+  { "role": "user", "content": "I absolutely love strong masala chai, but coffee makes me super jittery and anxious." },
+  { "role": "user", "content": "I’m vegetarian, but I’m not super strict if there’s egg in desserts or baked stuff." },
+  { "role": "user", "content": "I get overwhelmed in big social gatherings – I prefer 1:1 conversations or very small groups." },
+  { "role": "user", "content": "Mondays are the worst for me emotionally; I usually wake up with this heavy anxious feeling in my chest." },
+  { "role": "user", "content": "Music helps a lot – I usually listen to lo-fi or soft Bollywood while working to calm myself down." },
+
+  { "role": "user", "content": "In my free time I love story-driven video games and cozy indie games, nothing too competitive." },
+  { "role": "user", "content": "I’m trying to build a consistent workout habit, but right now it’s like… two walks a week at best." },
+  { "role": "user", "content": "I prefer texting over calls; unexpected phone calls spike my anxiety immediately." },
+  { "role": "user", "content": "I mainly use WhatsApp and Notion to organize my life – if it’s not in Notion, I will 100% forget it." },
+  { "role": "user", "content": "I’m on Android right now, but I keep flirting with the idea of switching to an iPhone just for the camera." },
+
+  { "role": "user", "content": "I tend to bottle up my feelings until I suddenly have a mini meltdown over something small, like a delayed message." },
+  { "role": "user", "content": "I’m in a long-distance relationship and I get very insecure when replies are slow, even though I logically know they’re busy." },
+  { "role": "user", "content": "I’ve noticed I’m harsh on myself when I make even tiny mistakes at work, like a typo in a spec." },
+  { "role": "user", "content": "Sleep is messy – some nights I scroll till 2am because my brain doesn’t want to shut up." },
+  { "role": "user", "content": "When I’m really stressed, I either overeat junk food or skip meals entirely, there’s no in-between." },
+
+  { "role": "user", "content": "One big goal this year is to switch into a more ML/AI-focused role, but I’m scared I’m not smart enough." },
+  { "role": "user", "content": "I value honesty a lot; if someone lies to me even once, I find it hard to trust them again." },
+  { "role": "user", "content": "My comfort show is ‘Friends’ – I rewatch random episodes when I feel lonely or overloaded." },
+  { "role": "user", "content": "I’m very sensitive to tone in messages; even a short ‘k’ can send me into overthinking mode." },
+  { "role": "user", "content": "I really want to build a stable routine with exercise, deep work blocks, and proper sleep, but I keep slipping back." },
+
+  { "role": "user", "content": "Work calls late in the evening really drain me; I prefer meetings before 5pm if possible." },
+  { "role": "user", "content": "I feel safest when someone explains things step by step instead of just telling me to ‘figure it out’." },
+  { "role": "user", "content": "If I sound sarcastic, I’m usually masking that I’m anxious or embarrassed, not actually angry." },
+  { "role": "user", "content": "I love when people remember small details about me, like my chai preference or that I hate loud bars." },
+  { "role": "user", "content": "If I disappear for a bit, it’s usually because I’m overwhelmed, not because I don’t want to talk – I just need gentle check-ins, not pressure." }
+]

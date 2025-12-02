@@ -1,0 +1,12 @@
+[
+  {"role": "user", "content": "Lately I've been struggling with anxiety again."},
+  {"role": "assistant", "content": "I'm really glad you shared that. How is it showing up for you?"},
+  {"role": "user", "content": "Racing thoughts at night. I can't sleep."},
+  {"role": "assistant", "content": "That sounds really tough."},
+  {"role": "user", "content": "I worry about everything — career, money, future."},
+  {"role": "assistant", "content": "Those worries can pile up quickly."},
+  {"role": "user", "content": "I’m trying journaling but not consistent."},
+  {"role": "assistant", "content": "Consistency is the hardest part of new habits."},
+  {"role": "user", "content": "Coffee makes it worse but I can't stop drinking it."},
+  {"role": "assistant", "content": "Caffeine can definitely amplify anxiety."}
+]
