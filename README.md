@@ -43,7 +43,7 @@ A simple UI that shows:
 
 ## 2. Repository Structure
 
-.
+```
 ├── app.py                     # Streamlit UI
 ├── MemoryExtractor.py         # Memory extraction logic (LLM-based)
 ├── PersonalityEngine.py       # Personality rewriting (LLM-based)
@@ -55,106 +55,60 @@ A simple UI that shows:
 │   └── test_validation.py
 ├── requirements.txt           # Python dependencies
 └── README.md                  # Project documentation
+```
 
-
-📦 3. Requirements
+##  3. Requirements
 Python Version
 
 Python 3.10+
 
 Install Dependencies
+```bash
 pip install -r requirements.txt
-
+```
 Environment Variable
-
+```graphql
 Set your OpenAI key (optional but recommended):
-
+```
 macOS/Linux
-
+```bash
 export OPENAI_API_KEY=your_key_here
-
+```
 
 Windows (PowerShell)
-
+```bash
 setx OPENAI_API_KEY "your_key_here"
-
+```
 
 If no key is set:
 
-Memory extraction returns empty structured output
+- Memory extraction returns empty structured output
 
-Personality engine will still run with fallback prompts
+- Personality engine will still run with fallback prompts
 
-Tests will still pass
+- Tests will still pass
 
-▶️ 4. Running the Application
+## 4. Running the Application
 
 Start the Streamlit app:
-
+```bash
 streamlit run app.py
+```
 
-
-You will see:
-
-Input message box
-
-Personality selector
-
-Neutral response
-
-Styled response
-
-🧪 5. Running Tests
+## 5. Running Tests
 
 Tests are written using pytest.
 
 Run all tests:
 
+```bash
 pytest
+```
 
 
-Tests cover:
-
-MemoryExtractor structure
-
-PersonalityEngine behavior
-
-Validation rules for chat messages
-
-🚀 6. Deployment Instructions
-
-This project can be deployed on Streamlit Cloud or any platform that supports Python:
-
-Streamlit Cloud:
-
-Push repo to GitHub
-
-Go to https://streamlit.io/cloud
-
-Deploy new app → choose this repo
-
-Set app.py as entry point
-
-Add the following secret (optional):
-
-OPENAI_API_KEY = your_key
-
-
-Your host link will be generated automatically.
-
-📌 7. Notes
-
-The solution is modular: Memory extraction and personality rewriting are independent components.
-
-The codebase is small, simple, and easy to extend.
-
-Test cases are deterministic and do not require network access.
-
-Designed to match the assignment requirement: modularity, structured output, and clean reasoning.
-
-🧩 8. System Architecture
+## 7. System Architecture
 Overview Diagram (Text Version)
-
+```
 ┌──────────────────────────────┐
 │         User Input            │
 │  (chat messages from user)    │
@@ -198,15 +152,14 @@ Overview Diagram (Text Version)
        │  (persona output)  │
        └────────────────────┘
 
-```mermaid
-flowchart TD
+```
+## 8. Notes
 
-A[User Messages (0–30)] --> B[Validation Layer<br>• Structure check<br>• Max 30 messages]
+- The solution is modular: Memory extraction and personality rewriting are independent components.
 
-B --> C[MemoryExtractor<br>(LLM-based)<br>• Preferences<br>• Emotional patterns<br>• Long-term facts]
+- The codebase is small, simple, and easy to extend.
 
-C --> D[Neutral Response<br>(LLM-based)]
+- Test cases are deterministic and do not require network access.
 
-D --> E[PersonalityEngine<br>(LLM rewrite)<br>• Mentor<br>• Friend<br>• Therapist<br>• Cheerleader]
+- Designed to match the assignment requirement: modularity, structured output, and clean reasoning.
 
-E --> F[Styled Response Output]
